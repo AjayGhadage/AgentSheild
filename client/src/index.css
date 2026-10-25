@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+@import "tailwindcss";
+
+
+:root {
+  --color-bg:       #070709;
+  --color-surface:  #0d0f15;
+  --color-surface-hover: #131620;
+  --color-border:   rgba(255, 255, 255, 0.08);
+  --color-text:     #f8fafc;
+  --color-muted:    #94a3b8;
+  --color-primary:  #f59e0b;
+  --color-primary-light: rgba(245, 158, 11, 0.15);
+  --color-danger:   #ef4444;
+  --color-warning:  #f59e0b;
+  --color-success:  #10b981;
+}
+
+* { box-sizing: border-box; }
+
+html, body, #root {
+  height: 100%;
+  font-family: 'Inter', system-ui, sans-serif;
+  background: var(--color-bg);
+  color: var(--color-text);
+  color-scheme: dark;
+}
+
+/* Severity badge colours */
+.badge-low      { background: rgba(16, 185, 129, 0.15); color: #34d399; border: 1px solid rgba(16, 185, 129, 0.3); }
+.badge-medium   { background: rgba(245, 158, 11, 0.15); color: #fbbf24; border: 1px solid rgba(245, 158, 11, 0.3); }
+.badge-high     { background: rgba(249, 115, 22, 0.15); color: #fb923c; border: 1px solid rgba(249, 115, 22, 0.3); }
+.badge-critical { background: rgba(239, 68, 68, 0.15); color: #f87171; border: 1px solid rgba(239, 68, 68, 0.3); }
+
+.badge-allow    { background: rgba(16, 185, 129, 0.15); color: #34d399; border: 1px solid rgba(16, 185, 129, 0.3); }
+.badge-block    { background: rgba(239, 68, 68, 0.15); color: #f87171; border: 1px solid rgba(239, 68, 68, 0.3); }
+.badge-review   { background: rgba(245, 158, 11, 0.15); color: #fbbf24; border: 1px solid rgba(245, 158, 11, 0.3); }
+
+/* Card */
+.card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 16px;
+  padding: 1.5rem;
+  color: var(--color-text);
+}
+
+/* Button */
+.btn-primary {
+  background: var(--color-primary);
+  color: #000;
+  border: none;
+  border-radius: 10px;
+  padding: 0.6rem 1.25rem;
+  font-weight: 700;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: all 0.15s ease-in-out;
+}
+.btn-primary:disabled { opacity: 0.5; cursor: not-allowed; }
+.btn-primary:hover:not(:disabled) {
+  background: #fbbf24;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(245, 158, 11, 0.25);
+}
+
+.btn-outline {
+  background: rgba(255, 255, 255, 0.03);
+  color: #f8fafc;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 10px;
+  padding: 0.55rem 1.2rem;
+  font-weight: 600;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: all 0.15s ease-in-out;
+}
+.btn-outline:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(245, 158, 11, 0.5);
+  color: #fbbf24;
+}
+
+/* Input */
+.input {
+  width: 100%;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 10px;
+  padding: 0.65rem 0.95rem;
+  font-size: 0.875rem;
+  font-family: inherit;
+  outline: none;
+  transition: all 0.15s;
+  background: rgba(255, 255, 255, 0.04);
+  color: #f8fafc;
+}
+.input:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 1px rgba(245, 158, 11, 0.4);
+  background: rgba(255, 255, 255, 0.06);
+}
+
+/* Textarea */
+textarea.input { resize: vertical; min-height: 120px; }
